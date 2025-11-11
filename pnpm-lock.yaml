@@ -66,8 +66,8 @@ importers:
         specifier: ^8.16.3
         version: 8.16.3
       pg-promise:
-        specifier: ^11.15.0
-        version: 11.15.0(pg-query-stream@4.7.0(pg@8.16.3))
+        specifier: ^12.3.0
+        version: 12.3.0(pg-query-stream@4.7.0(pg@8.16.3))
       ssh2-sftp-client:
         specifier: ^12.0.1
         version: 12.0.1
@@ -2278,8 +2278,8 @@ packages:
     peerDependencies:
       pg: '>=8.0'
 
-  pg-promise@11.15.0:
-    resolution: {integrity: sha512-EUXpXn90yPVPKxQH4qqUAEVcApd2tp/JdR3wG6LzBUgaXTUYqwmuXG4vFhhZTCctzhfzRA20EbORb9H4aAgUHA==}
+  pg-promise@12.3.0:
+    resolution: {integrity: sha512-uT3cPdn7huMgc1pfJwBey5aruKXTSyHtt/OxPdjUhVVEP/YftvFlSDkVnKopf1WTRyBSVV5ctv8pXKMBehvIpA==}
     engines: {node: '>=16.0'}
     peerDependencies:
       pg-query-stream: 4.10.3
@@ -2538,6 +2538,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spdx-exceptions@2.5.0:
     resolution: {integrity: sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==}
@@ -2548,9 +2549,9 @@ packages:
   spdx-license-ids@3.0.21:
     resolution: {integrity: sha512-Bvg/8F5XephndSK3JffaRqdT+gyhfqIPwDHpX80tJrF8QQRYMo8sNMeaZ2Dp5+jhwKnUmIOyFFQfHRkjJm5nXg==}
 
-  spex@3.4.1:
-    resolution: {integrity: sha512-Br0Mu3S+c70kr4keXF+6K4B8ohR+aJjI9s7SbdsI3hliE1Riz4z+FQk7FQL+r7X1t90KPkpuKwQyITpCIQN9mg==}
-    engines: {node: '>=14.0.0'}
+  spex@4.1.0:
+    resolution: {integrity: sha512-ktgNAQ1X9x1A3IMChM6XBDeVjhGPbLgPQ8aEzGOaUIhZTnLeJSBApvi3gXT789hee6h73N3jOeWkXDwoPbYT/A==}
+    engines: {node: '>=18.0.0'}
 
   split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
@@ -5248,13 +5249,13 @@ snapshots:
     dependencies:
       pg: 8.16.3
 
-  pg-promise@11.15.0(pg-query-stream@4.7.0(pg@8.16.3)):
+  pg-promise@12.3.0(pg-query-stream@4.7.0(pg@8.16.3)):
     dependencies:
       assert-options: 0.8.3
       pg: 8.16.3
       pg-minify: 1.8.0
       pg-query-stream: 4.7.0(pg@8.16.3)
-      spex: 3.4.1
+      spex: 4.1.0
     transitivePeerDependencies:
       - pg-native
 
@@ -5501,7 +5502,7 @@ snapshots:
 
   spdx-license-ids@3.0.21: {}
 
-  spex@3.4.1: {}
+  spex@4.1.0: {}
 
   split2@4.2.0: {}
 

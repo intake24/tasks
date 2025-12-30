@@ -81,9 +81,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^4.17.0
         version: 4.17.0(@vue/compiler-sfc@3.4.23)(eslint-plugin-format@1.0.1(eslint@9.31.0))(eslint@9.31.0)(typescript@5.8.3)
-      '@tsconfig/node22':
-        specifier: ^22.0.2
-        version: 22.0.2
+      '@tsconfig/node24':
+        specifier: ^24.0.0
+        version: 24.0.3
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -725,8 +725,8 @@ packages:
   '@tediousjs/connection-string@0.5.0':
     resolution: {integrity: sha512-7qSgZbincDDDFyRweCIEvZULFAw5iz/DeunhvuxpL31nfntX3P4Yd4HkHBRg9H8CdqY1e5WFN1PZIz/REL9MVQ==}
 
-  '@tsconfig/node22@22.0.2':
-    resolution: {integrity: sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA==}
+  '@tsconfig/node24@24.0.3':
+    resolution: {integrity: sha512-vcERKtKQKHgzt/vfS3Gjasd8SUI2a0WZXpgJURdJsMySpS5+ctgbPfuLj2z/W+w4lAfTWxoN4upKfu2WzIRYnw==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -2538,6 +2538,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spdx-exceptions@2.5.0:
     resolution: {integrity: sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==}
@@ -3432,7 +3433,7 @@ snapshots:
 
   '@tediousjs/connection-string@0.5.0': {}
 
-  '@tsconfig/node22@22.0.2': {}
+  '@tsconfig/node24@24.0.3': {}
 
   '@types/debug@4.1.12':
     dependencies:

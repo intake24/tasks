@@ -272,7 +272,7 @@ function it24v3(config: Config) {
         throw new Error(`IT24v3: DataExport task not found.`);
       }
 
-      const [status, value] = Object.entries(task.status)[0];
+      const [status, value] = Object.entries(task.status).at(0)!;
       switch (status) {
         case 'Pending':
           logger.info(`IT24v3: DataExport (Task ${taskId}) is pending.`);

@@ -323,8 +323,8 @@ export class ImportJsonSubmissions extends HasMsSqlPool implements Task<'ImportJ
 
           foodIdx++;
 
-          const foodGroupEnglishName = this.foodGroups[foodGroupId].englishName;
-          const foodGroupLocalName = this.foodGroups[foodGroupId].localName;
+          const foodGroupEnglishName = this.foodGroups[foodGroupId]?.englishName;
+          const foodGroupLocalName = this.foodGroups[foodGroupId]?.localName;
 
           const nutrientMap = Object.entries(nutrients).reduce<Record<string, number>>(
             (acc, [nutrientId, value]) => {

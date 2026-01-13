@@ -34,7 +34,7 @@ export interface SMTPMailer extends BaseMailer {
   auth?: {
     user: string;
     pass: string;
-  };
+  } | undefined;
 }
 
 export type MailConfig = {

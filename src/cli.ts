@@ -38,7 +38,9 @@ async function run() {
     if (taskIndex < 0 || taskIndex >= config.tasks.length)
       throw new Error('Task index is out of range.');
 
-    const task = config.tasks[taskIndex];
+    const task = config.tasks.at(taskIndex);
+    if (!task)
+      throw new Error(`Task not found at index ${taskIndex}.`);
 
     mailer.init();
 

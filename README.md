@@ -82,7 +82,7 @@ Currently implemented tasks are:
         "apiVersion": "v3" | "v4",
         "survey": "demo",
         "exportOffset": 7,
-        "exportVersion": "v2"
+        "exportVersion": "v4"
     },
     "db": {
         "database": "databaseName",

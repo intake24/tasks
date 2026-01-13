@@ -16,10 +16,10 @@
     along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import fs from 'fs-extra';
-import json5 from 'json5';
-
 import type { TaskDefinition } from '@/tasks/index.js';
+import fs from 'fs-extra';
+
+import json5 from 'json5';
 
 const tasks: TaskDefinition[] = json5.parse(fs.readFileSync('tasks.json', 'utf8'));
 

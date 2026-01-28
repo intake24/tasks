@@ -9,7 +9,7 @@ Group={{ env.group }}
 Restart=on-failure
 KillSignal=SIGQUIT
 WorkingDirectory={{ env.directory }}
-ExecStart=/usr/bin/node dist/index.js
+ExecStart=/usr/bin/node dist/index.mjs
 
 [Install]
 WantedBy=multi-user.target

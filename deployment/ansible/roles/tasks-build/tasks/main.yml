@@ -66,17 +66,6 @@
   args:
     chdir: '{{ env.directory }}'
 
-- name: Check if service is already running
-  shell: systemctl is-active {{ env.user }}
-  register: service_active
-  failed_when: false
-
-- name: Stop service if already running
-  service:
-    name: '{{ env.user }}'
-    state: stopped
-  when: service_active.rc == 0
-
 - name: Copy systemd service file
   template:
     src: tasks.service.j2
@@ -84,13 +73,11 @@
     owner: root
     group: root
     mode: '644'
-
-- name: Enable service
-  service:
-    name: '{{ env.user }}'
-    enabled: yes
+  register: service_file_copy
 
 - name: Restart service to apply configuration changes
   service:
     name: '{{ env.user }}'
+    daemon_reload: '{{ service_file_copy.changed }}'
+    enabled: yes
     state: restarted

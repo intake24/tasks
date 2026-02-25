@@ -17,7 +17,7 @@
 */
 
 /* eslint-disable perfectionist/sort-imports */
-import './bootstrap';
+import './bootstrap.js';
 import process from 'node:process';
 import { Command } from 'commander';
 import pkg from '../package.json' with { type: 'json' };

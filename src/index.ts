@@ -17,7 +17,7 @@
 */
 
 /* eslint-disable perfectionist/sort-imports */
-import './bootstrap';
+import './bootstrap.js';
 
 import cron from 'node-schedule';
 

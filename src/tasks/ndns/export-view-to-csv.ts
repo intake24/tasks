@@ -1,8 +1,8 @@
-import type { Duplex } from 'node:stream';
 import type { Task, TaskDefinition } from '../index.js';
 import { createReadStream, createWriteStream } from 'node:fs';
 import { unlink } from 'node:fs/promises';
 import { basename, resolve } from 'node:path';
+import { pipeline } from 'node:stream/promises';
 import { string as stringFormatter } from '@json2csv/formatters';
 import { Transform } from '@json2csv/node';
 import { format } from 'date-fns';
@@ -73,44 +73,25 @@ export class ExportViewToCSV extends HasMsSqlPool implements Task<'ExportViewToC
 
     const fields = await this.getHeaders();
 
-    return new Promise((resolve, reject) => {
-      const request = this.msPool.request();
-      request.stream = true;
-      request.query(`SELECT * FROM ${this.params.view}`);
+    const request = this.msPool.request();
+    request.stream = true;
+    request.query(`SELECT * FROM ${this.params.view}`);
 
-      const transform = new Transform(
-        {
-          fields,
-          withBOM: true,
-          formatters: {
-            string: stringFormatter({ quote: '' }),
-          },
+    const transform = new Transform(
+      {
+        fields,
+        withBOM: true,
+        formatters: {
+          string: stringFormatter({ quote: '' }),
         },
-        {},
-        { objectMode: true },
-      );
+      },
+      {},
+      { objectMode: true },
+    );
 
-      const output = createWriteStream(file, { encoding: 'utf8', flags: 'w+' });
+    const output = createWriteStream(file, { encoding: 'utf8', flags: 'w+' });
 
-      request.on('error', (err) => {
-        reject(err);
-      });
-
-      transform.on('error', (err) => {
-        reject(err);
-      });
-
-      output
-        .on('error', (err) => {
-          reject(err);
-        })
-        .on('finish', () => {
-          logger.debug(`Task ${this.name}: Data export finished.`);
-          resolve();
-        });
-
-      (request.pipe(transform) as Duplex).pipe(output);
-    });
+    await pipeline(request.toReadableStream(), transform, output);
   }
 
   private async transferToSftp(src: string, dest: string) {

@@ -94,8 +94,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       '@types/mssql':
-        specifier: ^9.1.9
-        version: 9.1.9(@azure/core-client@1.10.1)
+        specifier: ^12.3.0
+        version: 12.3.0(@azure/core-client@1.10.1)
       '@types/node':
         specifier: ^24.10.13
         version: 24.10.13
@@ -748,8 +748,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/mssql@9.1.9':
-    resolution: {integrity: sha512-P0nCgw6vzY23UxZMnbI4N7fnLGANt4LI4yvxze1paPj+LuN28cFv5EI+QidP8udnId/BKhkcRhm/BleNsjK65A==}
+  '@types/mssql@12.3.0':
+    resolution: {integrity: sha512-+jy+AJtfuTDI5+nhh0hDNcir1p8P+pf+qsHXpUpYvg7EikxUUePBe+a+Kr6j/Xs89o4EbHlVzrh0HOxbqWM31Q==}
 
   '@types/node-schedule@2.1.8':
     resolution: {integrity: sha512-k00g6Yj/oUg/CDC+MeLHUzu0+OFxWbIqrFfDiLi6OPKxTujvpv29mHGM8GtKr7B+9Vv92FcK/8mRqi1DK5f3hA==}
@@ -2714,6 +2714,7 @@ packages:
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   vue-eslint-parser@10.4.0:
@@ -3385,7 +3386,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/mssql@9.1.9(@azure/core-client@1.10.1)':
+  '@types/mssql@12.3.0(@azure/core-client@1.10.1)':
     dependencies:
       '@types/node': 24.10.13
       tarn: 3.0.2

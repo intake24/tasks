@@ -63,7 +63,7 @@
     "@types/pg": "^8.20.0",
     "@types/ssh2-sftp-client": "^9.0.6",
     "@typescript/native-preview": "7.0.0-dev.20260521.1",
-    "concurrently": "^9.2.1",
+    "concurrently": "^10.0.3",
     "eslint": "^10.4.0",
     "eslint-plugin-format": "^2.0.1",
     "lint-staged": "^17.0.5",
